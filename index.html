@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_1cf76b1c48b134ee1c9bfa2f825a2cad {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    
+                    <style>
+                        .foliumpopup {
+                            margin: auto;
+                        }
+                       .foliumpopup table{
+                            margin: auto;
+                        }
+                        .foliumpopup tr{
+                            text-align: left;
+                        }
+                        .foliumpopup th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_1cf76b1c48b134ee1c9bfa2f825a2cad" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_1cf76b1c48b134ee1c9bfa2f825a2cad = window.map = L.map(
+                "map_1cf76b1c48b134ee1c9bfa2f825a2cad",
+                {
+                    center: [25.7769, 87.47725],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_287a4bb90e237526eb3fb8b16026fdcc = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_287a4bb90e237526eb3fb8b16026fdcc.addTo(map_1cf76b1c48b134ee1c9bfa2f825a2cad);
+        
+    
+            var heat_map_5112b67d60e0af7c298f2e82196d4b5e = L.heatLayer(
+                [[25.7781, 87.4765], [25.7732, 87.4812], [25.7809, 87.4715], [25.7754, 87.4798]],
+                {
+  "minOpacity": 0.5,
+  "maxZoom": 18,
+  "radius": 15,
+  "blur": 15,
+}
+            );
+        
+    
+            heat_map_5112b67d60e0af7c298f2e82196d4b5e.addTo(map_1cf76b1c48b134ee1c9bfa2f825a2cad);
+        
+    
+
+        function geo_json_9cc7a456e3b4f4c03d67649365f7dc37_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_9cc7a456e3b4f4c03d67649365f7dc37 = L.geoJson(null, {
+                onEachFeature: geo_json_9cc7a456e3b4f4c03d67649365f7dc37_onEachFeature,
+            
+            ...{
+}
+        });
+
+        function geo_json_9cc7a456e3b4f4c03d67649365f7dc37_add (data) {
+            geo_json_9cc7a456e3b4f4c03d67649365f7dc37
+                .addData(data);
+        }
+            geo_json_9cc7a456e3b4f4c03d67649365f7dc37_add({"features": [{"geometry": {"coordinates": [87.4765, 25.7781], "type": "Point"}, "properties": {"lat": 25.7781, "lon": 87.4765, "popup": "\u003cb\u003ePurnea High School\u003c/b\u003e\u003cbr\u003eBlock: kasba\u003cbr\u003eLat: 25.7781\u003cbr\u003eLon: 87.4765\u003cbr\u003e\u003cbutton onclick=\"routeTo(25.7781, 87.4765)\"\u003eRoute from my location\u003c/button\u003e", "school_name": "Purnea High School"}, "type": "Feature"}, {"geometry": {"coordinates": [87.4812, 25.7732], "type": "Point"}, "properties": {"lat": 25.7732, "lon": 87.4812, "popup": "\u003cb\u003eSadar Girls High School\u003c/b\u003e\u003cbr\u003eBlock: purnea\u003cbr\u003eLat: 25.7732\u003cbr\u003eLon: 87.4812\u003cbr\u003e\u003cbutton onclick=\"routeTo(25.7732, 87.4812)\"\u003eRoute from my location\u003c/button\u003e", "school_name": "Sadar Girls High School"}, "type": "Feature"}, {"geometry": {"coordinates": [87.4715, 25.7809], "type": "Point"}, "properties": {"lat": 25.7809, "lon": 87.4715, "popup": "\u003cb\u003eMJ Boys School\u003c/b\u003e\u003cbr\u003eBlock: baisa\u003cbr\u003eLat: 25.7809\u003cbr\u003eLon: 87.4715\u003cbr\u003e\u003cbutton onclick=\"routeTo(25.7809, 87.4715)\"\u003eRoute from my location\u003c/button\u003e", "school_name": "MJ Boys School"}, "type": "Feature"}, {"geometry": {"coordinates": [87.4798, 25.7754], "type": "Point"}, "properties": {"lat": 25.7754, "lon": 87.4798, "popup": "\u003cb\u003eTown High School\u003c/b\u003e\u003cbr\u003eBlock: k.nagar\u003cbr\u003eLat: 25.7754\u003cbr\u003eLon: 87.4798\u003cbr\u003e\u003cbutton onclick=\"routeTo(25.7754, 87.4798)\"\u003eRoute from my location\u003c/button\u003e", "school_name": "Town High School"}, "type": "Feature"}], "type": "FeatureCollection"});
+        geo_json_9cc7a456e3b4f4c03d67649365f7dc37.setStyle(function(feature) {return feature.properties.style;});
+
+        
+    
+    geo_json_9cc7a456e3b4f4c03d67649365f7dc37.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["school_name"];
+    let aliases = ["school_name"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{
+  "sticky": true,
+  "className": "foliumtooltip",
+});
+                     
+    
+    geo_json_9cc7a456e3b4f4c03d67649365f7dc37.bindPopup(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["popup"];
+    let aliases = ["popup"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <td>${handleObject(layer.feature.properties[v]).toLocaleString()}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{
+  "className": "foliumpopup",
+});
+                     
+    
+            geo_json_9cc7a456e3b4f4c03d67649365f7dc37.addTo(map_1cf76b1c48b134ee1c9bfa2f825a2cad);
+        
+    
+            var geo_json_9cc7a456e3b4f4c03d67649365f7dc37searchControl = new L.Control.Search({
+                layer: geo_json_9cc7a456e3b4f4c03d67649365f7dc37,
+                
+                propertyName: 'school_name',
+                
+                collapsed: false,
+                textPlaceholder: 'Search school by name...',
+                position:'topleft',
+            
+                initial: false,
+                
+                hideMarkerOnCollapse: true
+            
+                });
+                geo_json_9cc7a456e3b4f4c03d67649365f7dc37searchControl.on('search:locationfound', function(e) {
+                    geo_json_9cc7a456e3b4f4c03d67649365f7dc37.setStyle(function(feature){
+                        return feature.properties.style
+                    })
+                    
+                    if(e.layer._popup)
+                        e.layer.openPopup();
+                })
+                geo_json_9cc7a456e3b4f4c03d67649365f7dc37searchControl.on('search:collapsed', function(e) {
+                        geo_json_9cc7a456e3b4f4c03d67649365f7dc37.setStyle(function(feature){
+                            return feature.properties.style
+                    });
+                });
+            map_1cf76b1c48b134ee1c9bfa2f825a2cad.addControl( geo_json_9cc7a456e3b4f4c03d67649365f7dc37searchControl );
+
+        
+</script>
+</html>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.min.js"></script>
+    <script>
+        let userLatLng = null;
+        let control = null;
+        let userMarker = null;
+        navigator.geolocation.getCurrentPosition(function(position) {
+            userLatLng = L.latLng(position.coords.latitude, position.coords.longitude);
+            userMarker = L.marker(userLatLng, {
+                icon: L.icon({
+                    iconUrl: 'https://cdn-icons-png.flaticon.com/512/149/149060.png',
+                    iconSize: [30, 30],
+                    iconAnchor: [15, 30],
+                    popupAnchor: [0, -30]
+                })
+            }).addTo(window.map).bindPopup("You are here");
+        }, function(err) {
+            console.warn('Geolocation error: ', err.message);
+        });
+
+        function routeTo(lat, lon) {
+            const map = window.map;
+            if (!userLatLng) {
+                alert('User location not available.');
+                return;
+            }
+            if (control) map.removeControl(control);
+            control = L.Routing.control({
+                waypoints: [userLatLng, L.latLng(lat, lon)],
+                routeWhileDragging: false
+            }).addTo(map);
+        }
+    </script>
+    
